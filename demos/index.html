@@ -1,9 +1,13 @@
 ---
 layout: default
+title: Demoland
+main: true
 ---
-
-Demo
-
-{% for my_page in site.pages %}
-        <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+<h2>Demos</h2>
+{% for demo in site.pages %}
+        {% if demo.tags contains 'demo' %}
+                <div class="item">
+                        <a class="page-link" href="{{ demo.url | prepend: site.baseurl }}">{{ demo.title }}</a>
+                </div>
+        {% endif %}
 {% endfor %}
