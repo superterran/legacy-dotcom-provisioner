@@ -4,3 +4,17 @@
   display: block;
   border: 0px;
 }
+
+.item {
+  display: block;
+  clear: both;
+}
+
+a.post-link {
+  display: inline;
+  float: left;
+}
+
+span.post-meta {
+  margin-left: 10px;
+}
