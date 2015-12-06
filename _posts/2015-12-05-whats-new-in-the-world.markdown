@@ -5,7 +5,7 @@ date:   2015-12-05 20:51:52 -0500
 categories: update
 ---
 
-Come on baby!!
+Come on baby!! This is really cool
 
 
 This is a first test of this cool new platform
