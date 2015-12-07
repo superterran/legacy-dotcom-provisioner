@@ -4,7 +4,9 @@ layout: default
 
 {% for page in site.pages %}
   {% if page.frontpage %}
-      {{ page.content }}
+    <div class="hero">
+        {{ page.content }}
+    </div>
   {% endif %}
 {% endfor %}
 
