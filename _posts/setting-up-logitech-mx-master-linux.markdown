@@ -1,6 +1,6 @@
-## Logitech MX Master
+# Logitech MX Master
 
-Logitech's MX Master is perhaps one of the best mice available at the moment. Supporting both Bluetooth and the Unifying Receiver, loads of buttons, a vertical scroll wheel and micro-usb rechargable battery, it's hard to go wrong with this thing. unfortunately, the default key mappings on my linux desktop (Gnome 3) are terrible. The thumb button didn't do anything, and the vertical scroll does god knows what.
+Logitech's MX Master is perhaps one of the best mice available at the moment. Supporting both Bluetooth and the Unifying Receiver, loads of buttons, a vertical scroll wheel and micro-usb rechargable battery, it's hard to go wrong with this thing. Unfortunately, the default key mappings on my linux desktop (Gnome 3) are terrible. The thumb button doesn't do anything, and the vertical scroll does god knows what.
 
 
 ![Keyboard Setting to Change to get Expose Thumb](./images/logitech_thumbbutton.png)
