@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Logitech MX Master and Linux
+title: Some kind of update
 date:  2015-12-06 00:22:00 -0500
 categories: Hardware Logitech
 ---
@@ -15,34 +15,12 @@ The vertical scroll button is a little harder to configure. Personally, I want t
 In Fedora 23, I install the following packages:
 
 ```
-$ sudo dnf install xautomation xbindkeys
+$ sudo dnf install xautomation xbindkeys xorg-x11-xinit-session
 ```
 
 and give xbindkeys the following config:
 
 in the ~/.xbindkeysrc
 ```
-# Configuration for Logitech MX Master Vertical Scroll Zoom
-
-  # Zoom Out
-  "xte 'keydown Control_L' 'key plus' 'keyup Control_L'"
-    b:6
-
-  # Zoom In
-  "xte 'keydown Control_L' 'key minus' 'keyup Control_L'"
-    b:7
-```
-
-You can try this configuration by running xbindkeys in a terminal. It should daemonize, but will not run on restart. Fedora doesn't have this working with systemd out of the box, so I had to improvise to get this working on login. I made a desktop file in ~/.config/autostart
-
-~/.config/autostart/xbindkeys.desktop
-```
-  [Desktop Entry]
-  Type=Application
-  Name=xbindkeys
-  Exec=/usr/bin/xbindkeys
-  Comment=Autostart xbindkeys for custom mouse/keybindings
-  Terminal=false
-  X-Desktop-File-Install-Version=0.22
-  OnlyShowIn=GNOME;
+``
 ```
