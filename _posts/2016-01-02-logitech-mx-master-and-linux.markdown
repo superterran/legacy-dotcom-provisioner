@@ -16,6 +16,7 @@ In Fedora 23, I had to install the following packages:
 
 ```
 $ sudo dnf install xautomation xbindkeys
+
 ```
 
 xbindkeys is a daemon that lets you remap keybindings. xautomation contains xte, which is a little app that let's you emulate keystrokes. Using the two, we can remap the mouse buttons to simulate
@@ -23,15 +24,15 @@ xbindkeys is a daemon that lets you remap keybindings. xautomation contains xte,
 and give xbindkeys the following config:
 
 in the ~/.xbindkeysrc
+
 ```
-  # Zoom Out
-  "xte 'keydown Control_L' 'keydown Shift_L' 'key plus' 'keyup Shift_L' 'keyup Control_L'"
-    b:6
+# Zoom Out
+"xte 'keydown Control_L' 'keydown Shift_L' 'key plus' 'keyup Shift_L' 'keyup Control_L'"
+  b:6
 
-  # Zoom In
-  "xte 'keydown Control_L' 'key minus' 'keyup Control_L'"
-    b:7
-
+# Zoom In
+"xte 'keydown Control_L' 'key minus' 'keyup Control_L'"
+  b:7
 ```
 I'm emulating ctrl+shift+plus for Zoom out in order to respect the default Zoom Out bindings for nautilus. All the browsers I use also support the binding so it so it's works out well. Zoom-in doesn't need it for some reason.  
 
@@ -40,12 +41,11 @@ You can try this configuration by running xbindkeys in a terminal. It should dae
 
 ~/.config/autostart/xbindkeys.desktop
 ```
-  [Desktop Entry]
-  Type=Application
-  Name=xbindkeys
-  Exec=/usr/bin/xbindkeys
-  Comment=Autostart xbindkeys for custom mouse/keybindings
-  Terminal=false
+[Desktop Entry]
+Type=Application
+Name=xbindkeys
+Exec=/usr/bin/xbindkeys
+Comment=Autostart xbindkeys for custom mouse/keybindings
+Terminal=false
 ```
-
 I really like this mouse setup. I've also gotten into the habit of pairing the mouse via bluetooth to my desktop computer for a slightly smoother mousing experience. Now if only they'd bake in bluetooth with their K800!
