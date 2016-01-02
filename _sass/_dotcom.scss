@@ -39,6 +39,7 @@ a.post-link {
 
 span.post-meta {
   margin-left: 10px;
+  margin-right: 20px;
 }
 
 p.demo-description {
@@ -63,10 +64,15 @@ div.hero {
 }
 
 .page-content code {
+  padding: 1px 5px 20px 1px;
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word;
   display: block;
+}
+
+#disqus_thread {
+  margin-top: 20px;
 }
