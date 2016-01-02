@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Logitech MX Master and Linux
-date:  2015-12-06 00:22:00 -0500
-categories: Hardware Logitech
+date:  2016-01-02 14:43:00 -0500
+categories: Hardware Linux
 ---
 
 Logitech's MX Master is perhaps one of the best mice available at the moment. Supporting both Bluetooth and the Unifying Receiver, loads of buttons, a vertical scroll wheel and micro-usb rechargable battery, it's hard to go wrong with this thing. Unfortunately, the default key mappings on my linux desktop (Gnome 3) are terrible. The thumb button doesn't do anything, and the vertical scroll does god knows what.
