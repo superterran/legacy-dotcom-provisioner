@@ -9,7 +9,9 @@
 title: superterran dot com
 email: superterran@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  I'm just some guy with a laptop
+  I'm just some guy with a laptop and not enough time on my hands. Here's hoping
+  that with a little love and care this sapling mess of html and markdown will
+  keep growing. I'll try to keep my contributions short and useful!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://superterran.com" # the base hostname & protocol for your site
 
@@ -18,7 +20,6 @@ github_username:  superterran
 facebook_username: doug.hatcher
 linkedin_username: doughatcher
 codepen_username: superterran
-
 
 # Build settings
 markdown: kramdown
