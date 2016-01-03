@@ -6,9 +6,15 @@
             <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
             <a class="post-meta commentcount" href="{{ post.url | prepend: site.baseurl }}#disqus_thread">Comments</a>
         </h2>
-        {{ post.excerpt }}
+        {% if page.showall == true %}
 
+          {{ post.content }}
 
+        {% else %}
+
+          {{ post.excerpt }}
+
+        {% endif %}
     </li>
     {% endfor %}
 </ul>
