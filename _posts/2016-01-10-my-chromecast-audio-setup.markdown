@@ -26,14 +26,13 @@ But wait, you restarted your box and the settings didn't persist, huh? Well, I h
 
 **$ cat ~/.config/autostart/lineout.desktop**
 ```
-  [Desktop Entry]
+[Desktop Entry]
   Type=Application
   Name=lineout mods
   Exec=pactl load-module module-loopback
   Comment=pushes line-in to the default out for Chromecast Audio support
   Terminal=false
   OnlyShowIn=GNOME;
-
 ```
 
 The constraint here is that it only starts when logged in. There's probably a better way to invoke this. If I figure it out, i'll be sure to update!
