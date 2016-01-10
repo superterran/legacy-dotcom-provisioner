@@ -37,4 +37,8 @@ But wait, you restarted your box and the settings didn't persist, huh? Well, I h
 
 The constraint here is that it only starts when logged in. There's probably a better way to invoke this. If I figure it out, i'll be sure to update!
 
+I was also running into some crackling and distortions. To help rememdy, I uncommented the following line in my **/etc/pulse/daemon.conf**:
 
+```
+  enable-remixing = yes
+```
