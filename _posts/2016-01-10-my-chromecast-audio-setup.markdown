@@ -40,5 +40,6 @@ The constraint here is that it only starts when logged in. There's probably a be
 I was also running into some crackling and distortions. To help rememdy, I uncommented the following line in my **/etc/pulse/daemon.conf**:
 
 ```
+  resample-method = speex-float-0
   enable-remixing = yes
 ```
