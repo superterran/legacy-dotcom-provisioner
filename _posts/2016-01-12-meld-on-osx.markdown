@@ -20,38 +20,39 @@ export PATH="/Users/User/bin:$PATH"
 Create a 'meld' file in this directory and use the following contents:
 
 ***$ cat ~/bin/meld***
+
 ```
-#!/usr/bin/python
-
-import sys
-import os
-import subprocess
-
-if len(sys.argv) > 1:
-  left = os.path.abspath(sys.argv[1]);
-else:
-  left = ""
-
-if len(sys.argv) > 2:
-  right = os.path.abspath(sys.argv[2]);
-else:
-  right = ""
-
-if len(sys.argv) > 3:
-  merged = os.path.abspath(sys.argv[3]);
-else:
-  merged = ""
-
-MELDPATH = "/Applications/Meld.app"
-arguments = " -n " + MELDPATH + " --args " + left + " " + merged + " " + right
-
-p = subprocess.call(['open', '-W', '-a',  MELDPATH, '--args', left, merged, right])
-
-And finally, add the following to your ~/.gitconfig
-
-[mergetool "meld"]
-        cmd = meld \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-        trustexitcode = true
+  #!/usr/bin/python
+  
+  import sys
+  import os
+  import subprocess
+  
+  if len(sys.argv) > 1:
+    left = os.path.abspath(sys.argv[1]);
+  else:
+    left = ""
+  
+  if len(sys.argv) > 2:
+    right = os.path.abspath(sys.argv[2]);
+  else:
+    right = ""
+  
+  if len(sys.argv) > 3:
+    merged = os.path.abspath(sys.argv[3]);
+  else:
+    merged = ""
+  
+  MELDPATH = "/Applications/Meld.app"
+  arguments = " -n " + MELDPATH + " --args " + left + " " + merged + " " + right
+  
+  p = subprocess.call(['open', '-W', '-a',  MELDPATH, '--args', left, merged, right])
+  
+  And finally, add the following to your ~/.gitconfig
+  
+  [mergetool "meld"]
+          cmd = meld \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+          trustexitcode = true
 ```
 
 And give it a shot!
