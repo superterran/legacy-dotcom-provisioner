@@ -22,4 +22,4 @@ linkedin_username: doughatcher
 codepen_username: superterran
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
