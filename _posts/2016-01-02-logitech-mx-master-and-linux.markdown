@@ -22,7 +22,7 @@ xbindkeys is a daemon that lets you remap keybindings. xautomation contains xte,
 and give xbindkeys the following config:
 
 *somewhere inside ~/.xbindkeysrc*
-~~~ ini
+~~~ini
 #zoom-in
    "xte 'keydown Control_L' 'keydown Shift_L' 'key plus' 'keyup Shift_L' 'keyup Control_L'"
     b:6
@@ -37,7 +37,8 @@ I'm emulating ctrl+shift+plus for Zoom out in order to respect the default Zoom 
 You can try this configuration by running xbindkeys in a terminal. It should daemonize, but will not run on restart. Fedora doesn't have this working with systemd out of the box, so I had to improvise to get this working on login. I made a desktop file in ~/.config/autostart
 
 ***~/.config/autostart/xbindkeys.desktop***
-~~~ ini
+
+~~~ini
   [Desktop Entry]
     Type=Application
     Name=xbindkeys
