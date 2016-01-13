@@ -21,7 +21,7 @@ xbindkeys is a daemon that lets you remap keybindings. xautomation contains xte,
 
 and give xbindkeys the following config:
 
-*somewhere inside **~/.xbindkeysrc***
+*somewhere inside ~/.xbindkeysrc*
 ~~~ ini
 #zoom-in
    "xte 'keydown Control_L' 'keydown Shift_L' 'key plus' 'keyup Shift_L' 'keyup Control_L'"
