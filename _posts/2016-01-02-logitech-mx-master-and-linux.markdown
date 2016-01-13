@@ -13,16 +13,16 @@ Logitech's MX Master is perhaps one of the best mice available at the moment. Su
 The vertical scroll button is a little harder to configure. Personally, I want the vertical scroll to do page zooming.
 
 In Fedora 23, I had to install the following packages:
-```
+~~~ bash
   $ sudo dnf install xautomation xbindkeys
-```
+~~~
 
 xbindkeys is a daemon that lets you remap keybindings. xautomation contains xte, which is a little app that let's you emulate keystrokes. Using the two, we can remap the mouse buttons to simulate
 
 and give xbindkeys the following config:
 
 *somewhere inside **~/.xbindkeysrc***
-```
+~~~ ini
 #zoom-in
    "xte 'keydown Control_L' 'keydown Shift_L' 'key plus' 'keyup Shift_L' 'keyup Control_L'"
     b:6
@@ -37,13 +37,13 @@ I'm emulating ctrl+shift+plus for Zoom out in order to respect the default Zoom 
 You can try this configuration by running xbindkeys in a terminal. It should daemonize, but will not run on restart. Fedora doesn't have this working with systemd out of the box, so I had to improvise to get this working on login. I made a desktop file in ~/.config/autostart
 
 ***~/.config/autostart/xbindkeys.desktop***
-```
+~~~ ini
   [Desktop Entry]
     Type=Application
     Name=xbindkeys
     Exec=/usr/bin/xbindkeys
     Comment=Autostart xbindkeys for custom mouse/keybindings
     Terminal=false
-```
+~~~
 
 I really like this setup. I've also gotten into the habit of pairing the mouse via bluetooth to my desktop computer for a slightly smoother mousing experience compared to the sometimes laggy Unifiying Receiver. Now if only they'd bake in bluetooth with their K800!
