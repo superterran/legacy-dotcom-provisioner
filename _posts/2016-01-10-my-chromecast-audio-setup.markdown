@@ -16,16 +16,16 @@ To get this working, select 'Listen to this Device' in the Line Out properties:
 
 Getting this to work in Linux (Fedora 23 w/ Gnome 3.18) was a little tricker, but not by much. In my config, there's not a menu option like 'Listen to this Device', but running the following in the terminal enables a 'loopback' device that will play the line-out through your default speaker:
 
-```
+~~~ bash
   $ pactl load-module module-loopback
-```
+~~~
 
 And boom, it starts working! You may need to tweak the sound settings so this sounds good, but you can control the volue through software and play the chromcast stream mixed with your system audio. It works pretty well, and really completes the solution as far as multi-room sound goes.
 
 But wait, you restarted your box and the settings didn't persist, huh? Well, I have an autostart entry that solves this problem:
 
 **$ cat ~/.config/autostart/lineout.desktop**
-```
+~~~ ini
 [Desktop Entry]
   Type=Application
   Name=lineout mods
@@ -33,7 +33,7 @@ But wait, you restarted your box and the settings didn't persist, huh? Well, I h
   Comment=pushes line-in to the default out for Chromecast Audio support
   Terminal=false
   OnlyShowIn=GNOME;
-```
+~~~
 
 The constraint here is that it only starts when logged in. There's probably a better way to invoke this. If I figure it out, i'll be sure to update!
 
