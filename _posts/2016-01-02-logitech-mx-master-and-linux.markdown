@@ -29,7 +29,7 @@ and give xbindkeys the following config:
 #zoom-out
   "xte 'keydown Control_L' 'key minus' 'keyup Control_L'"
     b:7
-```
+~~~
 
 I'm emulating ctrl+shift+plus for Zoom out in order to respect the default Zoom Out bindings for nautilus. All the browsers I use also support the binding so it so it's works out well. Zoom-in doesn't need it for some reason.  
 
