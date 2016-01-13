@@ -14,9 +14,9 @@ https://github.com/yousseb/meld/releases/tag/osx-v1
 
 Once this is installed, you need to make bash script so Meld is command-line executable and can be invoke through git. Name this file 'meld' and place it in a sourced directory that you can run commands from globally. I like to set up a ~/bin directory where I can put scripts like this and magerun so I can run them from anywhere, but you may have a better place for it on your system. You can source a directory by adding the following to the bottom of your ~/.zshrc or ~/.bash_profile:
 
-```
+~~~ bash
 export PATH="/Users/User/bin:$PATH"
-```
+~~~
 Create a 'meld' file in this directory and use the following contents:
 
 ***$ cat ~/bin/meld***
