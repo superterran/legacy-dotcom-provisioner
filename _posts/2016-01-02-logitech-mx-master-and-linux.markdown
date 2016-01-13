@@ -13,6 +13,7 @@ Logitech's MX Master is perhaps one of the best mice available at the moment. Su
 The vertical scroll button is a little harder to configure. Personally, I want the vertical scroll to do page zooming.
 
 In Fedora 23, I had to install the following packages:
+
 ~~~ bash
   $ sudo dnf install xautomation xbindkeys
 ~~~
@@ -22,6 +23,7 @@ xbindkeys is a daemon that lets you remap keybindings. xautomation contains xte,
 and give xbindkeys the following config:
 
 *somewhere inside ~/.xbindkeysrc*
+
 ~~~ini
 #zoom-in
    "xte 'keydown Control_L' 'keydown Shift_L' 'key plus' 'keyup Shift_L' 'keyup Control_L'"
