@@ -37,9 +37,4 @@ But wait, you restarted your box and the settings didn't persist, huh? Well, I h
 
 The constraint here is that it only starts when logged in. There's probably a better way to invoke this. If I figure it out, i'll be sure to update!
 
-I was also running into some crackling and distortions. To help rememdy, I uncommented the following line in my **/etc/pulse/daemon.conf**:
-
-```
-  resample-method = speex-float-0
-  enable-remixing = yes
-```
+I was also running into some crackling and distortions. To rememdy, I plugged the Chromecast Audio directly into the wall with the supplied USB wall outlet. Apperantly powering from my PC's USB port is no good and was adding a ton of distortions.
