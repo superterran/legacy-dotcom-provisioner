@@ -24,7 +24,8 @@ And boom, it starts working! You may need to tweak the sound settings so this so
 
 But wait, you restarted your box and the settings didn't persist, huh? Well, I have an autostart entry that solves this problem:
 
-**$ cat ~/.config/autostart/lineout.desktop**
+In ~/.config/autostart/lineout.desktop
+
 ~~~ini 
 [Desktop Entry]
   Type=Application
