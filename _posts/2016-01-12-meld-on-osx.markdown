@@ -21,7 +21,7 @@ Create a 'meld' file in this directory and use the following contents:
 
 ***$ cat ~/bin/meld***
 
-```
+~~~ python
   #!/usr/bin/python
   
   import sys
@@ -53,6 +53,6 @@ Create a 'meld' file in this directory and use the following contents:
   [mergetool "meld"]
           cmd = meld \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
           trustexitcode = true
-```
+~~~
 
 And give it a shot!
