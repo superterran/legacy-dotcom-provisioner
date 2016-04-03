@@ -1,7 +1,7 @@
 ---
   name: Looking for a good Linux Laptop
   tags: linux hardware
-  type: post
+  layout: post
 ---
 
 For years, I've ran some flavor of Linux on all my hardware. Lately, however, I awoke to discover that I've inadvertently factored out all my Linux boxes. It was innocuous enough. I've lent out my Linux desktop to a friend in need, and have mostly replaced it with a Microsoft Surface running Windows 10 and my newly acquired work laptop. My desktop at work was a bit of an anchor to a desk I no longer wanted, and so I traded in my two monitor Fedora box for a shiny new Macbook Pro. I might have gotten a Linux laptop, if the only thing on offer wasn't an offensive MSI gaming laptop with rainbow backlit keys. Ick. I'm a web developer, so the Pro has mostly been a good experience for me. I experimented with Magento and PHP7 after about six minutes worth of work, I have most of the toolset I'm used to on Linux, and the battery life is truly outstanding compared to comparable Linux-running laptops I've seen. 
