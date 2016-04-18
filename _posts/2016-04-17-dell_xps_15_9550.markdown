@@ -1,4 +1,10 @@
-I wanted to put together a little walkthrough to get this laptop working well in Linux. I've been very happy with it so far, but I had to put in a few nights of research to really get it working as I want.
+---
+layout: post
+title: Dell XPS 15 9550 Fedora Guide
+date:  2016-04-17 20:43:00 -0500
+categories: Hardware Linux
+---
+I wanted to put together a little walk through to get the new Dell XPS 15 9550 laptop working well in Linux. I've been very happy with it so far, but I had to put in a few nights of research to really get it working as I want.
 
 All instructions are for Fedora 23
 
@@ -8,7 +14,7 @@ You can get this to work with UEFI, but I ended up going Legacy boot since I was
 
 ##Bumblebee/Nvidia Optimus
 
-The XPS 15 comes with both an Intel and Nvidia graphics controllers. The Intel GPU does the desktop stuff fine, but if you want to do any gaming you'll want to switch over to the Nvidia. This isn't hard to do, but it seems to render everything to a virtual framebuffer and probably isn't as perforamnt as just using the nvidia card. It's easy to setup though: 
+The XPS 15 comes with both an Intel and Nvidia graphics controllers. The Intel GPU does the desktop stuff fine, but if you want to do any gaming you'll want to switch over to the Nvidia. This isn't hard to do, but it seems to render everything to a virtual frame buffer and probably isn't as perforamnt as just using the nvidia card. It's easy to setup though: 
 
 [Bumblebee Indicator Gnome Extension](https://extensions.gnome.org/extension/843/bumblebee-indicator/)
 [Bumblebee Installation Guide for Fedora](https://fedoraproject.org/wiki/Bumblebee)
@@ -42,10 +48,10 @@ My struggle is your gain, if you have a Broadcom BCM2045 A0 you should be able t
 ```bash
 $ curl https://www.dropbox.com/s/3ajj26zj3n79pcc/BCM-0a5c-6410.hcd?dl=1 /lib/firmware/brcm/BCM-0a5c-6410.hcd
 ```
-You should test this by turning off your PC and turning it back on, as opposed to just restarting. 
+You should test this by turning off your PC and turning it back on, as opposed to just restarting. You can determine where exactly to copy the firmware by using *dmesg | grep btusb*.
 
 ##Touch/Gestures
-This is a biggie for me, and a pain to setup. Luckilly, the synaptics touchpad provided with the laptop supports all sorts of gestures in Linux but you'll have to make some tweaks to get them to work. I used touchegg and touchegg-gce to configure three and four button gestures, and synclient to enable two-finger right click. 
+This is a biggie for me, and a pain to setup. Luckily, the synaptics touchpad provided with the laptop supports all sorts of gestures in Linux but you'll have to make some tweaks to get them to work. I used touchegg and touchegg-gce to configure three and four button gestures, and synclient to enable two-finger right click. 
 
 Removing xorg-x11-drv-libinput is needed to favor the synaptics module.
 ```
@@ -53,9 +59,10 @@ $ sudo  dnf remove xorg-x11-drv-libinput
 $ dnf install xorg-x11-drv-synaptics
 ```
 
-Let's configure the synaptics driver so we can take advantage of touchegg. Find the section with MatchDriver "synaptics" and add the otions in mine:
+Let's configure the synaptics driver so we can take advantage of touchegg. Find the section with MatchDriver "synaptics" and add the options in mine:
 
-```/usr/share/X11/xorg.conf.d/50-synaptics.conf
+*/usr/share/X11/xorg.conf.d/50-synaptics.conf*
+```conf
 Section "InputClass"
         Identifier "Default clickpad buttons"
         MatchDriver "synaptics"
@@ -67,7 +74,8 @@ EndSection
 ```
 Let's configure touchegg with some sane options...
 
-```/.config/touchegg/touchegg.conf
+*~/.config/touchegg/touchegg.conf*
+```
 <touchégg>
         <settings>
                 <property name="composed_gestures_time">0</property>
@@ -95,14 +103,29 @@ Let's configure touchegg with some sane options...
 </touchégg>%         
 ```
 And finally, let's configure touchegg to start automatically at login:
-```/etc/X11/xinit/xinitrc.d/touchegg.sh 
+
+*/etc/X11/xinit/xinitrc.d/touchegg.sh*
+``` 
 #!/bin/sh -x
 touchegg&
 ```
 This will give you three finger left and right as browser back and forth, three finger up and down to switch spaces, four finger up to enter the activities menu, and four finger down to close a browser tab. This isn't quite the Magic Trackpad, but it's close.
 
-## Standby and Power Management
+##Standby and Power Management
 
-As mentioned before, make sure you have a swap partition big enough to store the contents of your RAM. 
+As mentioned before, make sure you have a swap partition big enough to store the contents of your RAM. You'll also need to tell the login manager, GDM, what to do when you close the lid:
 
+Edit */etc/systemd/logind.conf* can comment out the line...
 
+```
+HandleLidSwitch=suspend
+```
+You can also set this to *hibernate* and *hybrid-sleep*, but hibernation doesn't really seem to work well.
+
+Optionally, you can install the [tlp package](https://wiki.archlinux.org/index.php/TLP) that supposedly provides better power management and automatic backlight control. To install...
+
+```bash
+$ dnf install tlp tlp-rdw
+```
+
+I'll update this guide as I add more. Good luck, let me know how it goes!
