@@ -22,7 +22,7 @@ The XPS 15 comes with both an Intel and Nvidia graphics controllers. The Intel G
 Basically, install as follows..
 
 After running all updates and restarting to ensure you're running the latest kernel available to your system:
-```bash
+```
 $ dnf -y --nogpgcheck install http://install.linux.ncsu.edu/pub/yum/itecs/public/bumblebee/fedora23/noarch/bumblebee-release-1.2-1.noarch.rpm
 $ dnf -y --nogpgcheck install http://install.linux.ncsu.edu/pub/yum/itecs/public/bumblebee-nonfree/fedora23/noarch/bumblebee-nonfree-release-1.2-1.noarch.rpm
 $ dnf install bumblebee-nvidia bbswitch-dkms VirtualGL.x86_64 VirtualGL.i686 primus.x86_64 primus.i686 kernel-devel
@@ -30,13 +30,13 @@ reboot
 ```
 When you want to use the Nvidia GPU, you need to pass the command through optirun, like follows:
 
-```bash
+```
 $ optirun glxspheres64
 ```
 
 If you're trying to run a game through Steam, be sure to update the launch command as follows:
 
-```bash
+```
 optirun $COMMAND (or whatever)
 ```
 
@@ -45,7 +45,7 @@ Bluetooth did not work out the box for me, but it would scan and discover device
 
 My struggle is your gain, if you have a Broadcom BCM2045 A0 you should be able to use something like the following to get this working:
 
-```bash
+```
 $ curl https://www.dropbox.com/s/3ajj26zj3n79pcc/BCM-0a5c-6410.hcd?dl=1 /lib/firmware/brcm/BCM-0a5c-6410.hcd
 ```
 You should test this by turning off your PC and turning it back on, as opposed to just restarting. You can determine where exactly to copy the firmware by using *dmesg | grep btusb*.
@@ -62,7 +62,7 @@ $ dnf install xorg-x11-drv-synaptics
 Let's configure the synaptics driver so we can take advantage of touchegg. Find the section with MatchDriver "synaptics" and add the options in mine:
 
 */usr/share/X11/xorg.conf.d/50-synaptics.conf*
-```conf
+```
 Section "InputClass"
         Identifier "Default clickpad buttons"
         MatchDriver "synaptics"
@@ -124,7 +124,7 @@ You can also set this to *hibernate* and *hybrid-sleep*, but hibernation doesn't
 
 Optionally, you can install the [tlp package](https://wiki.archlinux.org/index.php/TLP) that supposedly provides better power management and automatic backlight control. To install...
 
-```bash
+```
 $ dnf install tlp tlp-rdw
 ```
 
