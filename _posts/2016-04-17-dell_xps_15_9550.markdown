@@ -115,7 +115,7 @@ This will give you three finger left and right as browser back and forth, three 
 
 As mentioned before, make sure you have a swap partition big enough to store the contents of your RAM. You'll also need to tell the login manager, GDM, what to do when you close the lid:
 
-Edit */etc/systemd/logind.conf* can comment out the line...
+Edit */etc/systemd/logind.conf* and uncomment the line...
 
 ```
 HandleLidSwitch=suspend
