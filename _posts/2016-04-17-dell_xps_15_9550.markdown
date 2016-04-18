@@ -100,7 +100,7 @@ Let's configure touchegg with some sane options...
                         <action type="SEND_KEYS">Control+Alt+Down</action>
                 </gesture>
         </application>
-</touchégg>% 
+</touchégg>
 
 ```
 And finally, let's configure touchegg to start automatically at login:
