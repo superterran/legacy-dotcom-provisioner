@@ -47,9 +47,9 @@ Create a 'meld' file in this directory and use the following contents:
   arguments = " -n " + MELDPATH + " --args " + left + " " + merged + " " + right
   
   p = subprocess.call(['open', '-W', '-a',  MELDPATH, '--args', left, merged, right])
-  
+~~~
   And finally, add the following to your ~/.gitconfig
-  
+~~~
   [mergetool "meld"]
           cmd = meld \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
           trustexitcode = true
