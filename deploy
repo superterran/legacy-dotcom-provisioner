@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ansible-playbook -i deploy.yml -k -K -s
+

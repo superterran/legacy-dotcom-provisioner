@@ -1,0 +1,36 @@
+---
+- hosts: all
+  vars:
+   - docroot: /var/www/dotcom
+   - domain: superterran.comi
+   - email: superterran@gmail.com
+
+  tasks:
+   - name: check if epel is on server
+     stat: path=~/epel-release-7-7.noarch.rpm
+     register: epel
+   - name: add repository
+     shell: "wget -nc https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-7.noarch.rpm && rpm -ivh epel-release-7-7.noarch.rpm"
+     when: epel.stat.exists != True
+   - name: install prereqs 
+     yum: pkg=nodejs,npm,ruby,ruby-devel,git,httpd state=installed update_cache=true
+
+   - name: copy over httpd vhost
+     template: src=vhost.conf dest=/etc/httpd/conf.d/100-{{ domain }}.conf
+
+   - name: restart httpd
+     service: name=httpd state=restarted
+
+   - name: open up port 80
+     iptables: chain=INPUT protocol=tcp match=tcp destination_port=80 jump=ACCEPT
+
+   - name: install jekyll
+     shell: "gem install jekyll"
+
+   - name: ensure codebase is cloned down
+     git: repo=git@github.com:superterran/dotcom.git
+          accept_hostkey=True
+          dest={{ docroot }}
+
+   - name: build jekyll
+     shell: "cd {{ docroot }}/jekyll && jekyll build"
