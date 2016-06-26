@@ -1,4 +1,2 @@
 #!/bin/bash
-
-ansible-playbook -i deploy.yml -k -K -s
-
+ansible-playbook -i ./ansible/hosts ./ansible/build.yml
