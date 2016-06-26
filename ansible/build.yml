@@ -27,9 +27,10 @@
    - name: install jekyll
      shell: "gem install jekyll"
 
-   - name: ensure codebase is cloned down
+   - name: ensure latest version of codebase is cloned down with submodules
      git: repo=git@github.com:superterran/dotcom.git
           accept_hostkey=True
+          track_submodules=yes
           dest={{ docroot }}
 
    - name: build jekyll
