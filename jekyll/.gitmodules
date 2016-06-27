@@ -1,3 +1,4 @@
 [submodule "demos/Legend-of-Canvas"]
 	path = demos/Legend-of-Canvas
 	url = https://github.com/superterran/Legend-of-Canvas.git
+        branch=qunit
