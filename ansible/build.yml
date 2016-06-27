@@ -13,7 +13,7 @@
      shell: "wget -nc https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-7.noarch.rpm && rpm -ivh epel-release-7-7.noarch.rpm"
      when: epel.stat.exists != True
    - name: install prereqs 
-     yum: pkg=nodejs,npm,ruby,ruby-devel,git,httpd state=installed update_cache=true
+     yum: pkg=nodejs,npm,ruby,ruby-devel,git,httpd,ansible state=installed update_cache=true
 
    - name: copy over httpd vhost
      template: src=vhost.conf dest=/etc/httpd/conf.d/100-{{ domain }}.conf
