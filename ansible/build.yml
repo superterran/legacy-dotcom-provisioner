@@ -32,6 +32,7 @@
           accept_hostkey=True
           track_submodules=yes
           dest={{ docroot }}
+          force=True
 
    - name: build jekyll
      shell: "cd {{ docroot }}/jekyll && jekyll build"
