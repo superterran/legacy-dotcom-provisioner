@@ -2,7 +2,7 @@
 - hosts: all
   vars:
    - docroot: /var/www/dotcom
-   - domain: superterran.comi
+   - domain: superterran.com
    - email: superterran@gmail.com
 
   tasks:
