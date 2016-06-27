@@ -1,3 +1,4 @@
 [submodule "jekyll/demos/Legend-of-Canvas"]
 	path = jekyll/demos/Legend-of-Canvas
 	url = git@github.com:superterran/Legend-of-Canvas.git
+        branch = qunit
