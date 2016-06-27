@@ -9,9 +9,11 @@
    - name: check if epel is on server
      stat: path=~/epel-release-7-7.noarch.rpm
      register: epel
+
    - name: add repository
      shell: "wget -nc https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-7.noarch.rpm && rpm -ivh epel-release-7-7.noarch.rpm"
      when: epel.stat.exists != True
+
    - name: install prereqs 
      yum: pkg=nodejs,npm,ruby,ruby-devel,git,httpd,ansible state=installed update_cache=true
 
