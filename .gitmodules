@@ -8,3 +8,6 @@
 [submodule "lyricpimp"]
 	path = lyricpimp
 	url = git@bitbucket.org:superterran/lyricpimp.git 
+[submodule "supa"]
+	path = supa
+	url = git@github.com:superterran/supa.git
