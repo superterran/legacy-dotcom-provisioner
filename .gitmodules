@@ -1,13 +1,16 @@
 [submodule "madhabits"]
 	path = madhabits
 	url = git@bitbucket.org:superterran/madhabits.git
+	branch = master
 [submodule "jekyll"]
 	path = jekyll
 	url = git@github.com:superterran/jekyll.git
+	branch = master
 
 [submodule "lyricpimp"]
 	path = lyricpimp
-	url = git@bitbucket.org:superterran/lyricpimp.git 
+	url = git@bitbucket.org:superterran/lyricpimp.git
+	branch = master 
 [submodule "supa"]
 	path = supa
 	url = git@github.com:superterran/supa.git
