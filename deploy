@@ -1,10 +1,39 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
-for D in *; do
-    if [ -d "${D}" ]; then
-        if [ -f "${D}/build.yml" ]; then
-	    echo "Executing $D/build.yml"
-            ansible-playbook -i ./ansible/hosts $D/build.yml
-        fi
+COMMAND="ansible-playbook -i ./ansible/hosts"
+BUILDFILE="build.yml"
+
+execute () {
+    echo "executing $1/build.yml **"
+    $COMMAND $1/$BUILDFILE
+}
+
+display_help () {
+    cat <<-EOF
+    deployment/Management script for dotcom
+
+    usage: 
+
+    ./deploy                shows this usage help
+    ./deploy all            runs all */build.yml files
+    ./deploy <directory>    runs the <directory>/build.yml
+
+EOF
+}
+
+if [ $1 ]; then
+    if [ $1 == "all" ]; then
+        execute $1
+    else 
+        for D in *; do
+            if [ -d "${D}" ]; then
+                if [ -f "${D}/build.yml" ]; then
+                    execute ${D}
+                fi
+            fi
+        done
     fi
-done
+else
+    display_help
+fi 
+    
