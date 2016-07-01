@@ -19,6 +19,7 @@ display_help () {
     ./deploy <directory>    runs the <directory>/build.yml
 
 EOF
+exit
 }
 
 if [ $1 ]; then
@@ -33,6 +34,8 @@ if [ $1 ]; then
             fi
         done
     fi
+    echo "Executing post-build task" 
+    $COMMAND ansible/post-build.yml	
 else
     display_help
 fi 
