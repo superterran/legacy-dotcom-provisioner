@@ -11,3 +11,4 @@
 [submodule "supa"]
 	path = supa
 	url = git@github.com:superterran/supa.git
+        brach = dev/dirty
