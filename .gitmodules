@@ -4,3 +4,7 @@
 [submodule "jekyll"]
 	path = jekyll
 	url = git@github.com:superterran/jekyll.git
+
+[submodule "lyricpimp"]
+	path = lyricpimp
+	url = git@github.com:superterran/lyricpimp.git
