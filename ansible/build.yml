@@ -27,4 +27,4 @@
           dest={{ docroot }}
           force=yes
           update=yes
-    
+          recursive=yes 
