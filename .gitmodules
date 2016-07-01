@@ -7,4 +7,4 @@
 
 [submodule "lyricpimp"]
 	path = lyricpimp
-	url = git@github.com:superterran/lyricpimp.git
+	url = git@bitbucket.org:superterran/lyricpimp.git 
