@@ -1,3 +1,6 @@
 [submodule "madhabits"]
 	path = madhabits
 	url = git@bitbucket.org:superterran/madhabits.git
+[submodule "jekyll"]
+	path = jekyll
+	url = git@github.com:superterran/jekyll.git
