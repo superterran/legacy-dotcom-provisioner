@@ -1,2 +1,10 @@
-#!/bin/bash
-ansible-playbook -i ./ansible/hosts ./ansible/build.yml
+#!/usr/bin/bash
+
+for D in *; do
+    if [ -d "${D}" ]; then
+        if [ -f "${D}/build.yml" ]; then
+	    echo "Executing $D/build.yml"
+            ansible-playbook -i ./ansible/hosts $D/build.yml
+        fi
+    fi
+done
