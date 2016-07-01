@@ -3,5 +3,5 @@
 	url = git@github.com:superterran/Legend-of-Canvas.git
         branch = qunit
 [submodule "subdomains/madhabits"]
-	path = subdomains/madhabits
+	path = /madhabits
 	url = git@bitbucket.org:superterran/madhabits.git
