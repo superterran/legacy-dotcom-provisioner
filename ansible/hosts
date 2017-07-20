@@ -1,1 +1,1 @@
-superterran.com	ansible_user=root	ansbile_connection=ssh
+localhost	ansible_user=root	ansbile_connection=local
